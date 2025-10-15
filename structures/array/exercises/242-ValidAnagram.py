@@ -1,3 +1,5 @@
+from collections import Counter
+
 # Valid Anagram
 # Given two strings s and t, return true if the two strings are anagrams of each other, otherwise return false.
 # An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.
@@ -53,7 +55,6 @@ print(validateAnagram(s1,t1))
 print(validateAnagram(s2,t2))
     
 # Other approach
-from collections import Counter
 def validateAnagramUsingCounter(s: str, t: str) -> bool:
     return Counter(t) == Counter(s)
 
