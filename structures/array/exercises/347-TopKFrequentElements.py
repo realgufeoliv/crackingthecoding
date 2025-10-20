@@ -20,15 +20,15 @@ teste1 = [1,2,2,3,3,3]
 teste2 = [7,7]
 
 def solution(nums: list[int],k: int) -> int:
-    freq_element = Counter(nums) 
-    biggest_freq = [[] for num in range(len(nums)+1)] 
-    for (item,freq) in freq_element.items(): 
+    freq_element = Counter(nums)  #O(n)
+    biggest_freq = [[] for num in range(len(nums)+1)] # space O(n) and Time complexity O(n)
+    for (item,freq) in freq_element.items(): #O(n)
         biggest_freq[freq].append(item)
     
-    final_answer = []
+    final_answer = [] # O(n)
 
-    for index in range(len(biggest_freq)-1,0,-1):
-        for num in biggest_freq[index]:
+    for index in range(len(biggest_freq)-1,0,-1): #O(n)
+        for num in biggest_freq[index]: 
             final_answer.append(num)
             k -= 1
             if k == 0:
@@ -39,3 +39,5 @@ def solution(nums: list[int],k: int) -> int:
 
 print(solution(teste1,2))
 print(solution(teste2,1))
+
+# time complexity and space complexity of O(n)
